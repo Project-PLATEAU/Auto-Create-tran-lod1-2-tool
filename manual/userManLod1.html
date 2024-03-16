@@ -1,0 +1,721 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>操作マニュアル </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="操作マニュアル ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="操作マニュアル">操作マニュアル</h1>
+
+<h1 id="1-本書について">1 本書について</h1>
+<p>本書では、LOD1道路モデル自動生成ツールの操作手順について記載しています。</p>
+<h1 id="2-ツール構成">2 ツール構成</h1>
+<p>LOD1道路モデル自動生成ツールは、道路のシェープファイルを読み込みLOD1道路モデルのシェープファイルを作成する「AutoCreateLod1Road.exe」と、LOD1道路モデルのシェープファイルをCityGMLファイルに変換する「ConvertShapeToCityGML.exe」の二つのアプリケーションで構成しています。</p>
+<p><img src="../resources/userManLod1/userManLod1_001.png" alt=""></p>
+<h1 id="3-使い方">3 使い方</h1>
+<h2 id="3-1-lod1道路モデル自動生成">3-1 LOD1道路モデル自動生成</h2>
+<p>本節では、道路のシェープファイルを読み込みLOD1道路モデルのシェープファイルを作成する「AutoCreateLod1Road.exe」を本ツールとします。</p>
+<h3 id="3-1-1-入力シェープファイルの作成">3-1-1 入力シェープファイルの作成</h3>
+<p>LOD1道路モデル自動生成では、道路のシェープファイルと道路施設のシェープファイルを入力データとして使用します。（道路施設のシェープファイルは任意入力ファイルです。） <br>
+本ツールのユースケースでは、<a href="https://psgsv2.gsi.go.jp/koukyou/public/sien/pindex.html#psea03">公共測量成果検査支援ツール</a>を使用して、地図情報レベル2500のDM（Digital Mapping）データから道路と道路施設のシェープファイル（*.shp、*.shx、*.dbf、*.prj）を作成することを想定しています。 <br>
+シェープファイルの座標系は、平面直角座標系を想定しています。</p>
+<p><img src="../resources/userManLod1/userManLod1_002.png" alt="">
+<img src="../resources/userManLod1/userManLod1_003.png" alt="">
+<img src="../resources/userManLod1/userManLod1_004.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>シェープファイル</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道路</td>
+<td>道路のシェープファイル</td>
+</tr>
+<tr>
+<td>道路施設_1</td>
+<td>点形状の道路施設のシェープファイル</td>
+</tr>
+<tr>
+<td>道路施設_3</td>
+<td>線形状の道路施設のシェープファイル</td>
+</tr>
+<tr>
+<td>道路施設_5</td>
+<td>面形状の道路施設のシェープファイル</td>
+</tr>
+</tbody>
+</table>
+<p>シェープファイルには以下の属性データが必要です。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数値地形図データ取得分類コード</td>
+<td>DMデータの種別（道路縁（街区線）、道路橋（高架部）、道路のトンネル）判定に使用します。 <br> データ形式は4桁の整数値です。</td>
+</tr>
+<tr>
+<td>図形区分</td>
+<td>DMデータを図面出力する際に必要となる図形区分です。 <br> 道路施設データを取得する際の選別処理で使用します。 <br> データ形式は整数値です。</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../resources/userManLod1/userManLod1_005.png" alt=""></p>
+<p>本ツールで使用する数値地形図データ取得分類コードは以下のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th>数値地形図データ取得分類コード</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2101</td>
+<td>道路縁（街区線）</td>
+</tr>
+<tr>
+<td>2203</td>
+<td>道路橋（高架部）</td>
+</tr>
+<tr>
+<td>2219</td>
+<td>道路のトンネル</td>
+</tr>
+</tbody>
+</table>
+<p>本ツールで使用する図形区分コードは以下のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th>図形区分</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>非区分</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-1-2-入力パラメータファイルの作成">3-1-2 入力パラメータファイルの作成</h3>
+<p>LOD1道路モデル自動生成で使用するパラメータを記載した入力パラメータファイルを作成します。 <br>
+入力パラメータファイルの文字コードはShift_JISです。</p>
+<p>【入力パラメータファイル例】</p>
+<pre><code class="lang-text:create_param.txt">[Setting]
+RoadSHPPath = C:/work/data/DM_SHP/道路.shp
+RoadFacilitiesPointSHPPath = C:/work/data/DM_SHP/道路施設_1.shp
+RoadFacilitiesLineSHPPath = C:/work/data/DM_SHP/道路施設_3.shp
+RoadFacilitiesPolygonSHPPath = C:/work/data/DM_SHP/道路施設_5.shp
+JPZone = 9
+RegionWidth = 1500
+RegionHeight = 2000
+ThreadNum = 8
+OutputFolderPath = C:/work/output
+
+[DM_Attribute]
+DMCode = 分類コーA
+GeometryType = 図形区分
+
+[ErrCheck]
+MinArea = 10.0
+MaxDistance = 10.0
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>グループ</th>
+<th>設定項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setting</td>
+<td>RoadSHPPath</td>
+<td>道路シェープファイルパス（*.shp）※1</td>
+</tr>
+<tr>
+<td></td>
+<td>RoadFacilitiesPointSHPPath</td>
+<td>道路施設（点）シェープファイルパス（*.shp）※1</td>
+</tr>
+<tr>
+<td></td>
+<td>RoadFacilitiesLineSHPPath</td>
+<td>道路施設（線）シェープファイルパス（*.shp）※1</td>
+</tr>
+<tr>
+<td></td>
+<td>RoadFacilitiesPolygonSHPPath</td>
+<td>道路施設（線）シェープファイルパス（*.shp）※1</td>
+</tr>
+<tr>
+<td></td>
+<td>JPZone</td>
+<td>シェープファイルで使用している平面直角座標系の系番号（入力範囲 : 1-19）</td>
+</tr>
+<tr>
+<td></td>
+<td>RegionWidth</td>
+<td>道路縁データを分割して道路モデルを作成する際のモデル作成対象領域の幅。 <br> 入力値は整数とし、単位はm（メートル）です。</td>
+</tr>
+<tr>
+<td></td>
+<td>RegionHeight</td>
+<td>道路縁データを分割して道路モデルを作成する際のモデル作成対象領域の高さ。 <br> 入力値は整数とし、単位はm（メートル）です。</td>
+</tr>
+<tr>
+<td></td>
+<td>ThreadNum</td>
+<td>道路モデル作成時のマルチスレッド数。入力値は1以上の整数値とし、自マシンのスペックに合わせて設定してください。</td>
+</tr>
+<tr>
+<td></td>
+<td>OutputFolderPath</td>
+<td>出力フォルダパス</td>
+</tr>
+<tr>
+<td>DM_Attribute</td>
+<td>DMCode</td>
+<td>入力シェープファイルおける数値地形図データ取得分類コードの属性名</td>
+</tr>
+<tr>
+<td></td>
+<td>GeometryType</td>
+<td>入力シェープファイルにおける図形区分の属性名</td>
+</tr>
+<tr>
+<td>ErrCheck</td>
+<td>MinArea</td>
+<td>小領域道路ポリゴンのエラーチェックの際に使用する面積閾値。単位は、m^2（平方メートル）です。</td>
+</tr>
+<tr>
+<td></td>
+<td>MaxDistance</td>
+<td>車道交差部ポリゴンの中心が交差点から離れていないか確認するための距離閾値。単位はm（メートル）です。</td>
+</tr>
+</tbody>
+</table>
+<p>※1　シェープファイルパス（*.shp）が記載された同階層に、同名のshx、dbf、prjの拡張子のファイルが存在する想定です。</p>
+<p><img src="../resources/userManLod1/userManLod1_006.png" alt=""></p>
+<h3 id="3-1-3-lod1道路モデルの作成">3-1-3 LOD1道路モデルの作成</h3>
+<p>入力シェープファイルと入力パラメータファイルの準備が整っている状態で、コマンドプロンプトより「AutoCreateLod1Road.exe」を実行してLOD1道路モデルを作成します。
+実行コマンドは以下のとおりです。</p>
+<pre><code># AutoCreateLod1Road.exe 入力パラメータファイルパス
+</code></pre>
+<p>【コマンド例】 <br>
+「AutoCreateLod1Road.exe」と入力パラメータ「create_param.txt」がC:\work\AutoCreateLod1Roadに存在している想定です。</p>
+<pre><code># cd C:\work\AutoCreateLod1Road
+# AutoCreateLod1Road.exe create_param.txt
+</code></pre>
+<p><img src="../resources/userManLod1/userManLod1_007.png" alt=""></p>
+<p>作成したLOD1道路モデルは、入力パラメータファイルの「OutputFolderPath」に指定したフォルダパスに出力されます。 <br>
+LOD1道路モデルは、車道交差部や橋梁、トンネルなどの道路構造変化部分において道路モデルを分割する仕様のため、道路モデルの幾何形状は穴がないポリゴンとなりますが、本ツールでは道路モデルの分割処理が失敗する場合も考慮し、ポリゴンの穴を無視したシェープファイルと、ポリゴンの穴を考慮したシェープファイルを出力します。</p>
+<p><img src="../resources/userManLod1/userManLod1_008.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>出力ファイル</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOD1道路モデル（穴無視）</td>
+<td>LOD1道路ポリゴン（ポリゴンの穴は無視）のシェープファイル。 <br> ファイル名は、入力道路シェープファイルと同名です。</td>
+</tr>
+<tr>
+<td>LOD1道路モデル（穴考慮）</td>
+<td>LOD1道路ポリゴン（ポリゴンの穴を考慮）のシェープファイル。 <br> ファイル名は、入力道路シェープファイル名_withHolesです。</td>
+</tr>
+<tr>
+<td>エラーモデル情報</td>
+<td>エラーが発生しているLOD1道路モデルのエラー内容と位置情報を記載したCSVファイル。 <br> ファイル名は、ErrorInfo.csvです。</td>
+</tr>
+</tbody>
+</table>
+<p>LOD1道路モデルシェープファイルは、道路モデルの幾何情報と属性情報として道路構造種別を保持します。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道路構造種別（sectType）</td>
+<td>CityGMLのuro:RoadStructureAttributeのuro:sectionTypeに該当する属性情報。データ形式は整数値です。 <br> 本ツールでは、高架橋は2、車道交差部は4、トンネルは6、その他の道路モデルは未入力（NULL）とします。</td>
+</tr>
+</tbody>
+</table>
+<p>エラーモデル情報は、エラーが発生しているLOD1道路モデルのエラー内容と位置情報を保持しています。ファイルの文字コードはUTF-8です。</p>
+<p>【エラーモデル情報例】</p>
+<pre><code class="lang-text:ErrorInfo.csv">ERROR,X,Y
+TOPOLOGICAL_INVAILD_ERR, -35305.38, -64644.52
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>エラー内容</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MISSING_MODEL_ERR</td>
+<td>出力結果の道路モデルと車道交差部等で分割する前の道路モデルを比較した結果、出力結果の道路モデルが欠落しています。</td>
+</tr>
+<tr>
+<td>TOPOLOGICAL_INVAILD_ERR</td>
+<td>道路モデルに自己交差や自己接触等のトポロジー不正が発生しています。</td>
+</tr>
+<tr>
+<td>TOPOLOGICAL_SHORTAGE_POINT_ERR</td>
+<td>道路モデルの始終点が同一座標ではありません。</td>
+</tr>
+<tr>
+<td>TOPOLOGICAL_DUPLICATION_POINT_ERR</td>
+<td>道路モデルの頂点列に重複頂点が存在します。</td>
+</tr>
+<tr>
+<td>ANGLE_ERR</td>
+<td>道路モデルに鋭角（0-45deg）な内角が発生しています。</td>
+</tr>
+<tr>
+<td>INTERSECTION_MISMATCH_ERR</td>
+<td>交差点座標を内包しない車道交差部が存在します。</td>
+</tr>
+<tr>
+<td>INTERSECTION_SAME_POINT_ERR</td>
+<td>同一交差点座標を内包する車道交差部が複数存在します。</td>
+</tr>
+<tr>
+<td>INTERSECTION_DIFFERENT_POINT_ERR</td>
+<td>車道交差部内に複数の交差点座標が存在します。</td>
+</tr>
+<tr>
+<td>EXCESS_ERR</td>
+<td>出力結果の道路モデルと車道交差部等で分割する前の道路モデルを比較した結果、出力結果の道路モデルが分割前の道路モデルからからはみ出しています。</td>
+</tr>
+<tr>
+<td>SUPERIMPOSE_ERR</td>
+<td>車道交差部同士で重畳しています。</td>
+</tr>
+<tr>
+<td>WITHIN_ERR</td>
+<td>車道交差部に内包されている車道交差部が存在します。</td>
+</tr>
+<tr>
+<td>ROAD_DIVISION_ERR</td>
+<td>車道交差部の分岐数と車道交差部の外輪郭線から道路縁と重畳する部分を除いたポリラインの本数が一致しません。</td>
+</tr>
+<tr>
+<td>MINUSCULE_POLYGON_ERR</td>
+<td>入力パラメータの「MinArea」より小さい面積の道路モデルが存在します。</td>
+</tr>
+<tr>
+<td>INTERSECTION_DISTANCE_ERR</td>
+<td>車道交差部の中心と交差点座標間の距離が、入力パラメータの「MaxDistance」より大きい道路モデルが存在します。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-2-citygml変換">3-2 CityGML変換</h2>
+<p>本節では、LOD1道路モデルのシェープファイルをCityGMLファイルに変換する「ConvertShapeToCityGML.exe」を本ツールとします。</p>
+<h3 id="3-2-1-入力シェープファイルの準備">3-2-1 入力シェープファイルの準備</h3>
+<p>本ツールでは、道路面のシェープファイルを入力データとして使用します。 <br>
+シェープファイルはLOD1道路面の幾何情報と属性情報を保持しています。 <br>
+属性情報に関しては、マップファイルにて入力シェープファイルと出力CityGMLの属性情報の対応付けを行うため、CityGML変換に不必要な属性を含んでいても問題はありません。 <br>
+シェープファイルの座標系は、平面直角座標系を想定しています。</p>
+<p>【入力シェープファイル例】
+<img src="../resources/userManLod1/userManLod1_009.png" alt="">
+<img src="../resources/userManLod1/userManLod1_010.png" alt=""></p>
+<h3 id="3-2-2-マップファイルの作成">3-2-2 マップファイルの作成</h3>
+<p>マップファイルは、入力シェープファイルと出力CityGMLの属性情報の対応付けを行うためルールを記載したCSVファイルです。 <br>
+マップファイルは以下のファイルフォーマットのとおりに、1行に1属性ずつ変換対象の設定を記載します。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SettingAttrFlg</td>
+<td>変換対象とするか否かを指定するフラグ（1 : ON、0 : OFF）</td>
+</tr>
+<tr>
+<td>CityGMLAttrName</td>
+<td>CityGMLの属性名</td>
+</tr>
+<tr>
+<td>SHPAttrName</td>
+<td>シェープファイルの属性名</td>
+</tr>
+</tbody>
+</table>
+<p>マップファイルのCityGMLの属性名として使用可能な項目は以下のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th>CityGMLAttrName</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gml:description</td>
+<td>道路の概要</td>
+</tr>
+<tr>
+<td>gml:name</td>
+<td>道路を識別する名称 <br> 道路法に基づき路線が指定又は認定された路線名</td>
+</tr>
+<tr>
+<td>core:creationDate</td>
+<td>データが作成された日</td>
+</tr>
+<tr>
+<td>core:terminationDate</td>
+<td>データが削除された日</td>
+</tr>
+<tr>
+<td>tran:class</td>
+<td>交通分類</td>
+</tr>
+<tr>
+<td>tran:function</td>
+<td>道路法における道路の区分及び建築基準法における道路の区分</td>
+</tr>
+<tr>
+<td>tran:usage</td>
+<td>道路の利用方法</td>
+</tr>
+<tr>
+<td>uro:dmCode</td>
+<td>公共測量標準図式の図式分類コード</td>
+</tr>
+<tr>
+<td>uro:meshCode</td>
+<td>数値地形図データファイル仕様にもとづいて設定される図郭識別番号</td>
+</tr>
+<tr>
+<td>uro:srcScale</td>
+<td>元となるデータの地図情報レベル</td>
+</tr>
+<tr>
+<td>uro:geometrySrcDesc</td>
+<td>幾何オブジェクトを作成する元となるデータの説明</td>
+</tr>
+<tr>
+<td>uro:thematicSrcDesc</td>
+<td>主題属性を作成する元となるデータの説明</td>
+</tr>
+<tr>
+<td>uro:widthType</td>
+<td>幅員の区分</td>
+</tr>
+<tr>
+<td>uro:width</td>
+<td>中央帯、車道、路肩、植樹帯、歩道等及び環境施設帯（環境施設帯の中の路肩、植樹帯、歩道等の部分を除いた部分）の幅員を合計した値</td>
+</tr>
+<tr>
+<td>uro:numberOfLanes</td>
+<td>上下線の合計（一方通行区間の場合を除く）の車線数</td>
+</tr>
+<tr>
+<td>uro:sectionType</td>
+<td>道路構造の種別</td>
+</tr>
+<tr>
+<td>uro:sectionID</td>
+<td>交通量調査において、調査の単位となる交通調査基本区間に付与される番号（原則として、「都道府県（2桁）」+「道路種別（1桁）」+「路線番号（4桁）」+「順番号（4桁）」からなる11桁の番号）</td>
+</tr>
+<tr>
+<td>uro:routeName</td>
+<td>路線名</td>
+</tr>
+<tr>
+<td>uro:weekday12hourTrafficVolume</td>
+<td>平日7時～19時までに通過する車両台数</td>
+</tr>
+<tr>
+<td>uro:weekday24hourTrafficVolume</td>
+<td>平日7時～翌朝7時又は0時～翌日0時までに通過する車両台数</td>
+</tr>
+<tr>
+<td>uro:largeVehicleRate</td>
+<td>自動車類交通量に対する大型車交通量の割合</td>
+</tr>
+<tr>
+<td>uro:congestionRate</td>
+<td>交通調査基本区間の交通容量に対する交通量の比</td>
+</tr>
+<tr>
+<td>uro:averageTravelSpeedInCongestion</td>
+<td>朝のラッシュ時間帯（7時～9時）又は夕方のラッシュ時間帯（17時～19時）において平均旅行速度を集計し、その遅い方の時間帯の旅行速度</td>
+</tr>
+<tr>
+<td>uro:averageInboundTravelSpeedCongestion</td>
+<td>朝のラッシュ時間帯（7時～9時）又は夕方のラッシュ時間帯（17時～19時）において上り線における平均旅行速度を集計し、その遅い方の時間帯の旅行速度</td>
+</tr>
+<tr>
+<td>uro:averageOutboundTraelSpeedInCongestion</td>
+<td>朝のラッシュ時間帯（7時～9時）又は夕方のラッシュ時間帯（17時～19時）において下り線における平均旅行速度を集計し、その遅い方の時間帯の旅行速度</td>
+</tr>
+<tr>
+<td>uro:averageInboundTravelSpeedNotCongestion</td>
+<td>昼間非混雑（9時～17時）における上り線の平均旅行速度</td>
+</tr>
+<tr>
+<td>uro:averageOutboundTravelSpeedNotCongestion</td>
+<td>昼間非混雑（9時～17時）における下り線の平均旅行速度</td>
+</tr>
+<tr>
+<td>uro:observationPointName</td>
+<td>交通量等を観測した地点の名称</td>
+</tr>
+<tr>
+<td>uro:reference</td>
+<td>対象となる道路の区間を図上で域別する番号</td>
+</tr>
+<tr>
+<td>uro:surveyYear</td>
+<td>調査が実施された年</td>
+</tr>
+</tbody>
+</table>
+<p>【マップファイル例】</p>
+<pre><code class="lang-CSV:map.csv">SettingAttrFlg,CityGMLAttrName,SHPAttrName
+1,gml:description,desc
+1,gml:name,name
+1,core:creationDate,createDate
+1,core:terminationDate,termDate
+1,tran:class,class
+1,tran:function,func
+1,tran:usage,usage
+1,uro:dmCode,dmCode
+1,uro:meshCode,meshCode
+1,uro:srcScale,srcScale
+1,uro:geometrySrcDesc,geomDesc
+1,uro:thematicSrcDesc,themDesc
+1,uro:widthType,widthType
+1,uro:width,width
+1,uro:numberOfLanes,numOfLanes
+1,uro:sectionType,sectType
+1,uro:sectionID,sectID
+1,uro:routeName,routeName
+1,uro:weekday12hourTrafficVolume,12hTrafVol
+1,uro:weekday24hourTrafficVolume,24hTrafVol
+1,uro:largeVehicleRate,lgVehRate
+1,uro:congestionRate,cgstnRate
+1,uro:averageTravelSpeedInCongestion,ATSIC
+1,uro:averageInboundTravelSpeedCongestion,AIBTSIC
+1,uro:averageOutboundTraelSpeedInCongestion,AOBTSIC
+1,uro:averageInboundTravelSpeedNotCongestion,AIBTSNC
+1,uro:averageOutboundTravelSpeedNotCongestion,AOBTSNC
+1,uro:observationPointName,obsPtName
+1,uro:reference,ref
+1,uro:surveyYear,survYear
+</code></pre>
+<h3 id="3-2-3-パラメータファイルの作成">3-2-3 パラメータファイルの作成</h3>
+<p>本ツールで使用するパラメータを記載した入力パラメータファイルを作成します。 <br>
+入力パラメータファイルの文字コードはShift_JISです。</p>
+<p>【入力パラメータファイル例】</p>
+<pre><code class="lang-text:conv_param.txt">[Setting]
+LOD1RoadSHPPath = C:/work/conv/input/LOD1Road.shp
+JPZone = 6
+MapFilePath = C:/work/conv/input/map.csv
+OutputFolderPath = C:/work/conv/output
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>グループ</th>
+<th>設定項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setting</td>
+<td>LOD1RoadSHPPath</td>
+<td>LOD1道路面シェープファイルパス（*.shp） ※2</td>
+</tr>
+<tr>
+<td></td>
+<td>JPZone</td>
+<td>シェープファイルで使用している平面直角座標系の系番号（入力範囲 : 1-19）</td>
+</tr>
+<tr>
+<td></td>
+<td>MapFilePath</td>
+<td>マップファイルパス</td>
+</tr>
+<tr>
+<td></td>
+<td>OutputFolderPath</td>
+<td>出力フォルダパス</td>
+</tr>
+</tbody>
+</table>
+<p>※2　シェープファイルパス（*.shp）が記載された同階層に、同名のshx、dbf、prjの拡張子のファイルが存在する想定です。</p>
+<h3 id="3-2-4citygml変換">3-2-4CityGML変換</h3>
+<p>入力シェープファイル、マップファイル及び入力パラメータファイルの準備が整っている状態で、コマンドプロンプトより「ConvertShapeToCityGML.exe」を実行してLOD1道路面シェープファイルをCityGMLファイルに変換します。
+実行コマンドは以下のとおりです。</p>
+<pre><code># ConvertShapeToCityGML.exe 入力パラメータファイルパス
+</code></pre>
+<p>【コマンド例】 <br>
+「ConvertShapeToCityGML.exe」と入力パラメータ「conv_param.txt」がC:\work\AutoCreateLod1Roadに存在している想定です。</p>
+<pre><code># cd C:\work\AutoCreateLod1Road
+# ConvertShapeToCityGML.exe ./conv_param.txt
+</code></pre>
+<p><img src="../resources/userManLod1/userManLod1_011.png" alt=""></p>
+<p>作成したCityGMLファイルは、入力パラメータファイルの「OutputFolderPath」に指定したフォルダパスに出力されます。 <br>
+出力CityGMLファイルは基準地域メッシュ（第3次地域区画）単位のデータとなっています。なお、CityGMLファイルは1ファイルのデータ量の上限が1GBとなっているため、基準地域メッシュサイズのCityGMLファイルのデータ量が1GBを超える場合は、ファイル分割を行います。</p>
+<p><img src="../resources/userManLod1/userManLod1_012.png" alt=""></p>
+<p>【出力CityGMLファイル名のフォーマット】 <br>
+（メッシュコード）_（地物型）_（CRS）_（オプション）.gml</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>メッシュコード</td>
+<td>ファイル単位となる地域メッシュのメッシュコード</td>
+</tr>
+<tr>
+<td>地物型</td>
+<td>格納された地物の種類を示す接頭辞（本ツールでは、tran となります。）</td>
+</tr>
+<tr>
+<td>CRS</td>
+<td>格納された地物に適用される空間参照系</td>
+</tr>
+<tr>
+<td>オプション</td>
+<td>必要に応じてファイルを細分したい場合の識別子</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../resources/userManLod1/userManLod1_013.png" alt=""></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

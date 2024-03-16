@@ -1,0 +1,465 @@
+{
+  "source_base_path": "F:/github/Auto-Create-tran-lod1-2-tool-tmp_2/markdown",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/devManLod1.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/devManLod1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/devManLod2.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/devManLod2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html"
+        },
+        ".json": {
+          "relative_path": "manual/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/userManLod1.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/userManLod1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/userManLod2.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/userManLod2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_001.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_002.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_002.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_003.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_003.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_004.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_004.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_005.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_005.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_006.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_006.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_007.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_007.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_008.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_008.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_009.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_009.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod1/devManLod1_010.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod1/devManLod1_010.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod2/devManLod2_001.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod2/devManLod2_001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod2/devManLod2_002.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod2/devManLod2_002.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devManLod2/devManLod2_003.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devManLod2/devManLod2_003.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "resources/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_001.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_002.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_002.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_003.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_003.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_004.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_004.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_005.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_005.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_006.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_006.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_007.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_007.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_008.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_008.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_009.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_009.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_010.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_010.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_011.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_011.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_012.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_012.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod1/userManLod1_013.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod1/userManLod1_013.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_001.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_002.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_002.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_003.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_003.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_004.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_004.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_005.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_005.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_006.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_006.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_007.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_007.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_008.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_008.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_009.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_009.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userManLod2/userManLod2_010.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userManLod2/userManLod2_010.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

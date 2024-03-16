@@ -1,0 +1,875 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>操作マニュアル </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="操作マニュアル ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="操作マニュアル">操作マニュアル</h1>
+
+<h1 id="1-本書について">1 本書について</h1>
+<p>本書では、LOD1道路モデル自動生成ツール（以下「本ツール」という。）の操作手順について記載しています。</p>
+<h1 id="2-システム概要">2 システム概要</h1>
+<p>航空写真（オルソ）や道路ポリゴンデータ等からCityGML形式およびシェープファイル形式の道路LOD2モデルを出力する機能を持つツールです。<br>
+本ツールは、①道路LOD1データ入力機能、②LOD2モデル生成機能、③CityGML出力機能の3つの機能から構成されています。<br>
+更に②LOD2モデル生成機能は、道路の隣接関係の判定機能、推論用データの生成機能、セグメンテーション機能、ノイズ除去機能、オクルージョンの再分類機能、ベクトル化機能のサブ機能から構成されます。各機能は独立していて、入力されたデータは順番に処理されます。<br>
+ツール構成図を以下に示します。</p>
+<p>&lt;ツール構成図&gt;
+<img src="../resources/userManLod2/userManLod2_001.png" alt=""></p>
+<h1 id="3-システム入力">3 システム入力</h1>
+<h2 id="3-1-入力ファイル一覧">3-1 入力ファイル一覧</h2>
+<p>以下に本ツールの入力ファイルを記載します。</p>
+<p>&lt;入力ファイル一覧&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>データ名</th>
+<th>入力元</th>
+<th>ファイルフォーマット</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>設定パラメータファイル</td>
+<td>ツール実行時にコンソール指定</td>
+<td>jsonファイル</td>
+<td>・ツール実行時に使用するパラメータを記載するファイル（詳細は3.2 設定パラメータファイル参照）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>LOD1 CityGMLファイル、もしくはシェープファイル</td>
+<td>設定パラメータファイルでパスを指定<br>CityGMLファイル：“CityGMLDir”キーにフォルダパス入力<br>シェープファイル：“ShapeDir”キーにフォルダパス入力</td>
+<td>CityGMLファイル、もしくはシェープファイル</td>
+<td>・ 道路LOD1データ<br>・ どちらを使用するかは設定パラメータファイルの”InputType”キーで指定する（詳細は3.2 設定パラメータファイル参照）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>航空写真(オルソ)群</td>
+<td>設定パラメータファイルの「OrthoDir」キーに入力でフォルダパスを指定</td>
+<td>TIFFファイル</td>
+<td>・航空写真(原画像)から作成した、LOD2モデル化対象エリアの航空写真のオルソ画像</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-2-設定パラメータファイル">3-2 設定パラメータファイル</h2>
+<p>本ツール実行時に使用するパラメータを記載するファイルです。</p>
+<p>&lt;設定パラメータファイルの仕様&gt;</p>
+<table>
+<thead>
+<tr>
+<th>ファイル形式</th>
+<th>ファイル名</th>
+<th>格納フォルダ</th>
+<th>入力先</th>
+<th>特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSON</td>
+<td>param.json</td>
+<td>任意</td>
+<td>システム全般</td>
+<td>文字コードはUTF-8とします。</td>
+</tr>
+</tbody>
+</table>
+<p>設定パラメータファイルのパラメータ一覧を以下に記載します。</p>
+<p>&lt;設定パラメータ一覧&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>キー名</th>
+<th>値形式</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>OrthoDir</td>
+<td>文字列</td>
+<td>推論に使用するオルソ画像(ワールドファイル付き)が保存されているディレクトリのパスを指定します。<br>指定されたフォルダパスが存在しない場合は無効とし、エラーメッセージを表示し、処理を中止します。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>InputType</td>
+<td>整数値</td>
+<td>入力ファイルにCityGMLファイル・シェープファイルのどちらを使うかを指定します。指定がない場合は無効とし、エラーメッセージを表示し、処理を中止します。<br>１：CityGMLファイル<br>２：シェープファイル</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CityGMLDir</td>
+<td>文字列</td>
+<td>「InputType」にCityGMLファイルが指定されている場合に使用する、LOD1 CityGMLが保存されているディレクトリのパスを指定します。<br>指定されたフォルダパスが存在しない場合は無効とし、エラーメッセージを表示し、処理を中止します。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ShapeDir</td>
+<td>文字列</td>
+<td>「InputType」にシェープファイルが指定されている場合に使用する、LOD1 シェープファイルが保存されているディレクトリのパスを指定します。<br> 指定されたフォルダパスが存在しない場合は無効とし、エラーメッセージを表示し、処理を中止します。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>OutputDir</td>
+<td>文字列</td>
+<td>途中結果と最終結果を出力するディレクトリのパスを指定します。<br>指定されたフォルダパスが存在しない場合は無効とし、エラーメッセージを表示し、処理を中止します。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>OrthoEpsg</td>
+<td>整数値</td>
+<td>オルソ画像のワールドファイルに記載された座標のEPSGコードを指定します。<br>未記入の場合は無効とし、エラーメッセージを表示し、処理を中止します。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>CityGmlEpsg</td>
+<td>整数値</td>
+<td>CityGMLに記載されている座標のEPSGコードを指定します。<br>未記入の場合は無効とし、エラーメッセージを表示し、処理を中止します。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>【任意】Device</td>
+<td>文字列</td>
+<td>推論を実行するデバイスを指定します。CPUのみの環境ではcpuを指定します。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>【任意】InferenceSize</td>
+<td>整数値</td>
+<td>推論を行う際のタイルの1辺のサイズ(pixel) を指定します。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>【任意】InferencePadding</td>
+<td>整数値</td>
+<td>推論を行う際のタイルで推論結果を使用しない外側の幅(pixel) を指定します。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>【任意】NoiseThreshold</td>
+<td>整数値</td>
+<td>小さな領域の除去で除去する領域のピクセル数の閾値を指定します。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>【任意】StartWith</td>
+<td>文字列</td>
+<td>途中から実行したい場合の開始ステップ名を指定します。(load_citygml, check_road_connectivity, generate_inference_input, infer, remove_noise, remove_occlusion, vectorize, export_citygml) <br>output_dirにそのステップの直前までの結果が含まれている必要があります。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>【任意】EndWith</td>
+<td>文字列</td>
+<td>途中で実行を止めたい場合の最後のステップ名を指定します。(load_citygml, check_road_connectivity, generate_inference_input, infer, remove_noise, remove_occlusion, vectorize, export_citygml)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>OutputLogDir</td>
+<td>文字列</td>
+<td>ログのフォルダパスを指定します。<br>未記入または、存在しない場合は、本システムのPythonコードと同階層のログフォルダ“output_log”にログファイルを作成し、処理を中止します。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>DebugLogOutput</td>
+<td>真偽値</td>
+<td>デバッグレベルのログを出力するかどうかのフラグを指定します。<br>trueまたはfalseで値を指定します。<br>未記入、または、真偽値以外の値が入力された場合は、エラーメッセージを表示し、処理を中止します。</td>
+</tr>
+</tbody>
+</table>
+<p>設定パラメータファイルの記載例を以下に示します。</p>
+<p>&lt;設定パラメータファイル記載例&gt;</p>
+<p><img src="../resources/userManLod2/userManLod2_002.png" alt=""></p>
+<h1 id="4-システム出力">4 システム出力</h1>
+<h2 id="4-1-出力ファイル一覧">4-1 出力ファイル一覧</h2>
+<p>以下に本ツールの出力ファイルを記載します。</p>
+<p>&lt;出力ファイル一覧&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>データ名</th>
+<th>出力先</th>
+<th>ファイルフォーマット</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>LOD2 CityGMLファイル、もしくはシェープファイル</td>
+<td>設定パラメータファイル“OutputDir”キーで指定したフォルダパスに新規作成した[CityGMLFolder_YYYYMMDD_HHMM\8_lod2_output]（YYYMMDD_HHMMSSは作成時の時間）フォルダ（入力がシェープファイルの場合は[ShapeFolder_YYYYMMDD_HHMM\8_lod2_output]）</td>
+<td>CityGMLファイル</td>
+<td>・LOD2の道路情報、及び属性データを持ったCityGMLデータ。<br>・入力データがCityGMLファイルの場合はCityGML ファイルとシェープファイルの両方を出力します。入力データがシェープファイルの場合はシェープファイルのみを出力します。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ログファイル</td>
+<td>設定パラメータファイル“OutputLogDir”キーで指定したフォルダパスに新規作成した[outputlog_YYYMMDD_HHMMSS]（YYYMMDD_HHMMSSは作成時の時間） フォルダ<br>（未記入または、存在しない場合は、実行時のカレントフォルダにログフォルダ“output_log”を作成し、その中に[outputlog_YYYMMDD_HHMMSS]（YYYMMDD_HHMMSSは作成時の時間）フォルダを作成します）</td>
+<td>txtファイル/csvファイル</td>
+<td>・4.4 ログファイルを参照してください。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>中間生成ファイル</td>
+<td>設定パラメータファイル“OutputDir”キーで指定したフォルダパスに新規作成した[CityGMLFolder_YYYYMMDD_HHMM]（YYYMMDD_HHMMSSは作成時の時間）の以下フォルダ<br>・1_road_info<br>・2_road_info_with_neighbors<br>・3_inference_input<br>・4_inference_result<br>・5_inference_result_noiseless<br>・6_inference_result_without_occlusion<br>・7_vectorized</td>
+<td>TIFファイル/YMLファイル</td>
+<td>・LOD2 CityGMLファイル、もしくはシェープファイルを出力するための中間生成ファイル群です。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-2-lod2-citygmlファイル">4-2 LOD2 CityGMLファイル</h2>
+<p>本ツールが出力するLOD2 CityGMLファイルは、入力LOD1 CityGMLファイルの道路情報にLOD2道路情報を追記したCityGMLファイルです。<br>
+以下に、出力LOD2 CityGMLファイルの例を示します。</p>
+<p>&lt;出力LOD2 CityGMLファイル例&gt;</p>
+<p><img src="../resources/userManLod2/userManLod2_003.png" alt=""></p>
+<h2 id="4-3-lod2-シェープファイル">4-3 LOD2 シェープファイル</h2>
+<p>本ツールが出力するLOD2 シェープファイルは、入力シェープファイルの道路情報にLOD2道路情報を追記したシェープファイルです。<br>
+以下に、出力LOD2 シェープファイルの例を示します。</p>
+<p>&lt;出力LOD2 シェープファイル例&gt;</p>
+<p><img src="../resources/userManLod2/userManLod2_004.png" alt=""></p>
+<h2 id="4-4-ログファイル">4-4 ログファイル</h2>
+<h3 id="4-4-1-出力ログファイル一覧">4-4-1 出力ログファイル一覧</h3>
+<p>以下に出力ログファイル一覧を記載します。<br>
+[No.1実行ログファイル]の詳細情報として、[No.2～6]の各モジュールログファイルを出力します。<br>
+なお[No.1～6]は開発者向けログ、[No.7モデル化結果サマリーファイル]はユーザー向けログを想定しています。</p>
+<p>&lt;出力ログファイル一覧&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>データ名</th>
+<th>出力ファイル名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>実行ログファイル</td>
+<td>main_log.txt</td>
+<td>・本システムのログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>道路LOD1データ入力モジュールログファイル</td>
+<td>load_citygml_log.txt</td>
+<td>・CityGML入力モジュールのログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>道路の隣接関係の判定モジュールログファイル</td>
+<td>check_road_connectivity_log.txt</td>
+<td>・道路の隣接関係の判定のログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>推論用データの生成モジュールログファイル</td>
+<td>generate_inference_input_log.txt</td>
+<td>・推論用データの生成モジュールのログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>セグメンテーションモジュールログファイル</td>
+<td>infer_log.txt</td>
+<td>・セグメンテーションモジュールのログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ノイズ除去モジュールログファイル</td>
+<td>remove_noise_log.txt</td>
+<td>・ノイズ除去モジュールのログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>オクルージョンの再分類モジュールログファイル</td>
+<td>remove_occlusion_log.txt</td>
+<td>・オクルージョンの再分類モジュールのログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ベクトル化モジュールログファイル</td>
+<td>vectorize_log.txt</td>
+<td>・ベクトル化モジュールのログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>CityGML出力モジュールログファイル</td>
+<td>export_citygml_log.txt</td>
+<td>・CityGML出力モジュールのログメッセージを出力します。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>結果サマリーファイル</td>
+<td>road_create_result.csv</td>
+<td>・各道路のモデル化結果ログを出力します。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-4-2-実行ログファイル">4-4-2 実行ログファイル</h3>
+<h4 id="4-4-2-1-ログ構成">4-4-2-1 ログ構成</h4>
+<p>以下に実行ログファイルの構成を記載します。
+&lt;ログ構成&gt;
+<img src="../resources/userManLod2/userManLod2_005.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>出力場所</th>
+<th>項目名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ヘッダ情報</td>
+<td>①　本ツール名<br>②　本ツールのバージョン<br>③　本ツールの起動時間<br>④　各モジュールの名前とモジュールログファイル名<br>⑤　設定パラメータファイルパス<br>⑥　モジュール動作中のデバッグログ出力フラグ</td>
+</tr>
+<tr>
+<td>モジュールごとの実行結果ログ</td>
+<td>⑦　各モジュールのログ</td>
+</tr>
+<tr>
+<td>フッタ情報</td>
+<td>⑧　本ツールの終了時間<br>⑨　本ツールの稼働時間</td>
+</tr>
+</tbody>
+</table>
+<p>[⑦各モジュールのログ]の例を以下に記載します。<br>
+処理対象のCityGMLファイルごとに、各モジュールの結果概要(モジュール開始・終了日時、モジュール実施結果)が記載されます。</p>
+<p>&lt;各モジュールログ例&gt;
+<img src="../resources/userManLod2/userManLod2_006.png" alt=""></p>
+<p>ログファイルに出力されるログレベルの一覧を以下に記載します。</p>
+<p>&lt;ログレベル&gt;</p>
+<table>
+<thead>
+<tr>
+<th>ログレベル</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERROR</td>
+<td>処理が途中終了するような致命的なエラー</td>
+</tr>
+<tr>
+<td>MODEL_ERROR</td>
+<td>LOD2道路モデルに関するエラー(生成エラーの場合等)</td>
+</tr>
+<tr>
+<td>WARN</td>
+<td>問題ですが、処理を継続実行可能なエラー</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>モジュールの開始や終了などの情報</td>
+</tr>
+<tr>
+<td>DEBUG</td>
+<td>システムの動作状況に関する詳細な情報<br>パラメータファイルにてDebugLogOutputがtrueに指定されている場合は、出力します</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-4-2-2-ログメッセージ">4-4-2-2 ログメッセージ</h4>
+<p>以下に実行ログファイルの主なログメッセージを記載します。<br>
+開発者向けログである性質上、記載以外のメッセージが出力される場合があります。</p>
+<p>&lt;ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[ERROR]</td>
+<td>parameter file does not exist.</td>
+<td>設定ファイルが存在しない。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>[ERROR]</td>
+<td>OrthoDir is invalid.</td>
+<td>航空写真(オルソ)フォルダパスが文字列ではない。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[ERROR]</td>
+<td>OrthoDir not found.</td>
+<td>航空写真(オルソ)フォルダパスが存在しない。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>[ERROR]</td>
+<td>InputType is invalid.</td>
+<td>入力ファイルタイプが数値ではない。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>[ERROR]</td>
+<td>InputType not support.</td>
+<td>入力ファイルタイプに1,2以外の値を入力している。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>[ERROR]</td>
+<td>CityGMLDir is invalid.</td>
+<td>入力CityGMLフォルダパスが文字列ではない。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>[ERROR]</td>
+<td>CityGMLDir not found.</td>
+<td>入力CityGMLフォルダパスが存在しない。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>[ERROR]</td>
+<td>ShapeDir is invalid.</td>
+<td>入力シェープファイルフォルダパスが文字列ではない。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>[ERROR]</td>
+<td>ShapeDir not found.</td>
+<td>入力シェープファイルフォルダパスが存在しない。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>[ERROR]</td>
+<td>OutputDir is invalid.</td>
+<td>結果出力先フォルダパスが文字列ではない。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>[ERROR]</td>
+<td>[OutputDir] cannot make.</td>
+<td>生成モデルの出力先パスが作成不可能なディレクトリを指定している。<br>[OutputDir]には、実際のフォルダパスが記載される。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>[ERROR]</td>
+<td>OutputLogDir is invalid.</td>
+<td>ログ出力先フォルダパスが文字列ではない。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>[ERROR]</td>
+<td>OrthoEpsg is invalid.</td>
+<td>EPSGコード(オルソ画像) が数値ではない。</td>
+</tr>
+<tr>
+<td>14</td>
+<td>[ERROR]</td>
+<td>CityGmlEpsg is invalid.</td>
+<td>EPSGコード(CityGML)が数値ではない。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>[ERROR]</td>
+<td>DebugLogOutput is invalid.</td>
+<td>デバッグログ出力フラグに真偽値以外の値を入力している。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-4-3-モジュールログファイル">4-4-3 モジュールログファイル</h3>
+<h4 id="4-4-3-1-ログ構成">4-4-3-1 ログ構成</h4>
+<p>モジュールログファイルの例を以下に記載します。<br>
+各モジュールの詳細結果(モジュール開始・終了日時、モジュールの任意メッセージ)が記載されます。</p>
+<p>&lt;モジュールログ例(CityGML出力)&gt;
+<img src="../resources/userManLod2/userManLod2_007.png" alt=""></p>
+<h4 id="4-4-3-2-ログメッセージ">4-4-3-2 ログメッセージ</h4>
+<p>以下に各モジュールのエラーログファイルの主なログメッセージを記載します。
+開発者向けログである性質上、記載以外のメッセージが出力される場合があります。</p>
+<p>&lt;道路LOD1データ入力モジュール　ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[ERROR]</td>
+<td>File not found</td>
+<td>入力CityGMLファイルもしくは入力シェープファイルが存在しない。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>[ERROR]</td>
+<td>support ortho files not found</td>
+<td>入力CityGMLファイルに対応するオルソ画像が存在しない。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[WARNING]</td>
+<td>[モジュール結果中間出力フォルダ]already exists</td>
+<td>結果中間出力フォルダが既にある。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>[DEBUG]</td>
+<td>[オルソ画像ファイル名数] ortho file</td>
+<td>入力されたオルソ画像ファイルの数を表示。</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;道路の隣接関係の判定モジュール　ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[WARNING]</td>
+<td>[モジュール結果中間出力フォルダ]already exists</td>
+<td>結果中間出力フォルダが既にある。</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;推論用データの生成モジュール　ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[WARNING]</td>
+<td>[モジュール結果中間出力フォルダ]already exists</td>
+<td>結果中間出力フォルダが既にある。</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;セグメンテーションモジュール　ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[WARNING]</td>
+<td>[モジュール結果中間出力フォルダ]already exists</td>
+<td>結果中間出力フォルダが既にある。</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;ノイズ除去モジュール　ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[WARNING]</td>
+<td>[モジュール結果中間出力フォルダ]already exists</td>
+<td>結果中間出力フォルダが既にある。</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;オクルージョンの再分類モジュール　ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[WARNING]</td>
+<td>[モジュール結果中間出力フォルダ]already exists</td>
+<td>結果中間出力フォルダが既にある。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>[DEBUG]</td>
+<td>remain occlusion, rewrite roadway</td>
+<td>連結成分内がオクルージョンのみの場合に車道(1)に書き換える際に表示。</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;ベクトル化モジュール　ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[WARNING]</td>
+<td>[モジュール結果中間出力フォルダ]already exists</td>
+<td>結果中間出力フォルダが既にある。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>[WARNING]</td>
+<td>[結果最終出力フォルダ]already exists</td>
+<td>結果最終出力フォルダが既にある。</td>
+</tr>
+</tbody>
+</table>
+<p>&lt; CityGML出力モジュール　ログメッセージ&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>ログレベル</th>
+<th>エラー文言</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[WARNING]</td>
+<td>[CityGMLファイル名] lod2 road data not found, write skip</td>
+<td>該当のCityGMLファイルに書き込むLOD2道路データが存在しないためスキップする。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-4-4-モデル化結果サマリーファイル">4-4-4 モデル化結果サマリーファイル</h3>
+<h4 id="4-4-4-1-サマリー構成">4-4-4-1 サマリー構成</h4>
+<p>各道路のモデル作成結果をcsvファイル形式で出力します。
+出力例を以下に示します。</p>
+<p>&lt;モデル化結果出力例&gt;
+<img src="../resources/userManLod2/userManLod2_008.png" alt=""></p>
+<p>ヘッダ部分に出力日時と出力結果の説明が記載され、結果一覧に道路ごとの出力結果やモジュールごとの実行結果が記載されます。結果一覧の出力項目と内容について以下に示します。</p>
+<p>&lt;結果サマリーファイルの出力項目&gt;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>項目名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>No</td>
+<td>行番号</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ファイル名</td>
+<td>道路情報が記載されているCityGMLファイル名もしくはシェープファイル名</td>
+</tr>
+<tr>
+<td>3</td>
+<td>道路ID</td>
+<td>道路ID</td>
+</tr>
+<tr>
+<td>4</td>
+<td>最終結果</td>
+<td>SUCCESS：道路モデルの作成に成功<br>WARNING：対応オルソがないため道路モデルの作成を行わない</td>
+</tr>
+<tr>
+<td>5</td>
+<td>道路LOD1データ入力</td>
+<td>道路LOD1データ入力	〇：道路LOD1データの取得に成功<br>×：道路LOD1データの取得に失敗<br>-：道路LOD1データ作成対象外</td>
+</tr>
+<tr>
+<td>6</td>
+<td>道路の隣接関係の判定</td>
+<td>〇：道路の隣接関係の判定結果のデータ追加に成功<br>×：道路の隣接関係の判定結果のデータ追加に失敗<br>-：道路の隣接関係の判定結果のデータ追加対象外</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ベクトル化</td>
+<td>〇：ベクトル化に成功<br>×：ベクトル化に失敗<br>-：ベクトル化対象外</td>
+</tr>
+</tbody>
+</table>
+<h1 id="5-基本操作">5 基本操作</h1>
+<p>本ツールの操作手順を記載します。<br>
+本ツールに入力するデータの作成を行います。(入力データの詳細については、3.システム入力を参照してください。)<br>
+まずは、写真測量ソフトウェアを用いて航空写真(原画像)から、航空写真(オルソ)を作成します。<br>
+次に、航空写真の撮影エリアに該当するLOD1 CityGMLファイルを用意します。(G空間情報センターからCityGMLファイルをダウンロードすることを想定しています。)入力にシェープファイルを使用したい場合はユーザが用意します。</p>
+<p>&lt;入力ファイルの準備&gt;
+<img src="../resources/userManLod2/userManLod2_009.png" alt=""></p>
+<h2 id="5-1--設定パラメータファイルの作成">5-1  設定パラメータファイルの作成</h2>
+<p>入力ファイルの準備が完了したら、設定パラメータファイルの作成を行います。<br>
+設定パラメータファイルの記載内容については、3.2 設定パラメータファイルを参照してください。<br>
+設定パラメータファイルは本ツールの実行ファイル（AutoCreateRoadLod2.py）と同階層に配置してください。</p>
+<h2 id="5-2-ツールの実行">5-2 ツールの実行</h2>
+<p>下図に操作手順を示します。</p>
+<p>&lt;操作手順&gt;
+<img src="../resources/userManLod2/userManLod2_010.png" alt=""></p>
+<p>本ツールを実行するにあたり、仮想環境を用意する必要があります。<br>
+なお、仮想環境の構築は初回のみの作業です。仮想環境の構築手順の詳細は、環境構築手順書を参照してください。<br>
+入力ファイルの準備、設定パラメータファイルの作成、および、仮想環境の構築が完了した場合は、仮想環境上で本ツールを実行します。</p>
+<p>本ツールを実行する際のコマンドを以下に示します。(上図、操作手順のツールの実行で使用するコマンド)</p>
+<pre><code>&gt; python AutoCreateRoadLod2.py param.json
+</code></pre>
+<p>AutoCreateRoadLod2.py : 本システムのPythonコード<br>
+param.json : 設定パラメータファイルパス<br>
+本ツールの動作が終了した後は、仮想環境の終了動作を行うことで仮想環境から抜け出すことが出来ます。<br>
+出力ファイルの確認を行う際は、以下フォルダの確認を行います。</p>
+<table>
+<thead>
+<tr>
+<th>出力ファイル</th>
+<th>出力場所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOD2 CityGMLファイルまたはシェープファイル</td>
+<td>設定パラメータファイルのOutputDirで指定したフォルダ内の「CityGMLFolder_YYYYMMDD_HHMM\8_lod2_output」フォルダ<br>（入力がシェープファイルの場合は「ShapeFolder_YYYYMMDD_HHMM\8_lod2_output」）</td>
+</tr>
+<tr>
+<td>ログファイル</td>
+<td>設定パラメータファイルのOutputLogDirで指定したフォルダ</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
