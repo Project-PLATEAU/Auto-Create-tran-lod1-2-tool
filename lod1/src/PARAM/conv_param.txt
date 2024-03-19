@@ -1,0 +1,5 @@
+[Setting]
+LOD1RoadSHPPath = C:/work/data/LOD1/road.shp
+JPZone=6
+MapFilePath= C:/work/map.csv
+OutputFolderPath=C:/work/citygml

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="1_設定ファイル">
+      <UniqueIdentifier>{95fbc7d5-45f7-4192-a052-8e610405f495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Shapeファイル">
+      <UniqueIdentifier>{cf301c02-754d-4e70-93e7-013b2fa08ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3_道路縁操作">
+      <UniqueIdentifier>{63cf2768-aca8-41ac-91ed-98e77c8d3dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_凹包">
+      <UniqueIdentifier>{193afae4-2bd9-45d5-9529-8806153d6bce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="5_エラーチェック">
+      <UniqueIdentifier>{55dfd2c6-0efc-4fec-9789-0e9dc7f909ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="6_出力ファイル設定">
+      <UniqueIdentifier>{c0bbce47-b043-487b-8424-21aa13719428}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AutoCreateLod1Road.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CDMRoadDataManager.cpp">
+      <Filter>2_Shapeファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CShapeManager.cpp">
+      <Filter>2_Shapeファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CReadParamFile.cpp">
+      <Filter>1_設定ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnalyzeRoadEdge.cpp">
+      <Filter>3_道路縁操作</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnalyzeRoadEdgeDebugUtil.cpp">
+      <Filter>3_道路縁操作</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnalyzeRoadEdgeGeomUtil.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CBoostGraphUtil.cpp">
+      <Filter>3_道路縁操作</Filter>
+    </ClCompile>
+    <ClCompile Include="CRoadCenterLine.cpp">
+      <Filter>3_道路縁操作</Filter>
+    </ClCompile>
+    <ClCompile Include="CConcaveHull.cpp">
+      <Filter>4_凹包</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadModelErrorChecker.cpp">
+      <Filter>5_エラーチェック</Filter>
+    </ClCompile>
+    <ClCompile Include="COutputSetting.cpp">
+      <Filter>6_出力ファイル設定</Filter>
+    </ClCompile>
+    <ClCompile Include="CRoadDivision.cpp">
+      <Filter>3_道路縁操作</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnalyzeTunnel.cpp">
+      <Filter>3_道路縁操作</Filter>
+    </ClCompile>
+    <ClCompile Include="CLog.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CDMRoadDataManager.h">
+      <Filter>2_Shapeファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="DMType.h">
+      <Filter>2_Shapeファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CShapeManager.h">
+      <Filter>2_Shapeファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CReadParamFile.h">
+      <Filter>1_設定ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnalyzeRoadEdge.h">
+      <Filter>3_道路縁操作</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnalyzeRoadEdgeDebugUtil.h">
+      <Filter>3_道路縁操作</Filter>
+    </ClInclude>
+    <ClInclude Include="AnalyzeRoadEdgeCommon.h">
+      <Filter>3_道路縁操作</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnalyzeRoadEdgeGeomUtil.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CBoostGraphUtil.h">
+      <Filter>3_道路縁操作</Filter>
+    </ClInclude>
+    <ClInclude Include="CRoadCenterLine.h">
+      <Filter>3_道路縁操作</Filter>
+    </ClInclude>
+    <ClInclude Include="CRoadData.h">
+      <Filter>3_道路縁操作</Filter>
+    </ClInclude>
+    <ClInclude Include="CConcaveHull.h">
+      <Filter>4_凹包</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LIB\concaveman-cpp\concaveman.h">
+      <Filter>4_凹包</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadModelErrorChecker.h">
+      <Filter>5_エラーチェック</Filter>
+    </ClInclude>
+    <ClInclude Include="COutputSetting.h">
+      <Filter>6_出力ファイル設定</Filter>
+    </ClInclude>
+    <ClInclude Include="CRoadDivision.h">
+      <Filter>3_道路縁操作</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnalyzeTunnel.h">
+      <Filter>3_道路縁操作</Filter>
+    </ClInclude>
+    <ClInclude Include="CQueue.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CLog.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

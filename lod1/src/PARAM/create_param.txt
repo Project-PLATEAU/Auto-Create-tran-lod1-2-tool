@@ -1,0 +1,18 @@
+[Setting]
+RoadSHPPath = C:/work/data/“¹˜H‰.shp
+RoadFacilitiesPointSHPPath = C:/work/data/“¹˜Hİ”õ_1.shp
+RoadFacilitiesLineSHPPath = C:/work/data/“¹˜Hİ”õ_3.shp
+RoadFacilitiesPolygonSHPPath = C:/work/data/“¹˜Hİ”õ_5.shp
+JPZone = 6
+RegionWidth = 1500
+RegionHeight = 2000
+ThreadNum = 8
+OutputFolderPath = C:/work/output
+
+[DM_Attribute]
+DMCode = •ª—ŞƒR[A
+GeometryType = }Œ`‹æ•ª
+
+[ErrCheck]
+MinArea = 1.0
+MaxDistance = 5.0

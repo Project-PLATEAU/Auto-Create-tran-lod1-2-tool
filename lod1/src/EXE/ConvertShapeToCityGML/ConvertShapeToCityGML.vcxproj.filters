@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="設定ファイル">
+      <UniqueIdentifier>{6edc2e13-790c-43cc-a65c-2c09dc3ef74a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ログ出力サンプル">
+      <UniqueIdentifier>{2faeb788-bd98-48f3-8377-f9a2ce9b84b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_マップファイル">
+      <UniqueIdentifier>{b770f564-11d4-4f41-ba5b-945788394c6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3_Shapeファイル">
+      <UniqueIdentifier>{39030e2c-0281-48ff-a316-cc9bad902467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_設定ファイル">
+      <UniqueIdentifier>{20e15b71-7878-46b1-8f4c-63dae6d48498}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ConvertShapeToCityGML.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadAttributeFile.cpp">
+      <Filter>2_マップファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>ログ出力サンプル</Filter>
+    </ClCompile>
+    <ClCompile Include="CShapeManager.cpp">
+      <Filter>3_Shapeファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CReadParamFile.cpp">
+      <Filter>1_設定ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CDMDataManager.cpp">
+      <Filter>3_Shapeファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshSplitter.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputCityGML.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ReadAttributeFile.h">
+      <Filter>2_マップファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>ログ出力サンプル</Filter>
+    </ClInclude>
+    <ClInclude Include="CShapeManager.h">
+      <Filter>3_Shapeファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CReadParamFile.h">
+      <Filter>1_設定ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CDMDataManager.h">
+      <Filter>3_Shapeファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="DMType.h">
+      <Filter>3_Shapeファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshSplitter.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputCityGML.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
