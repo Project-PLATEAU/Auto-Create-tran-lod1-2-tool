@@ -143,3 +143,6 @@ GPU環境の構築方法を以下に示します。なお、手順6-1～6-4はPC
 > pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
 ```
 
+## 6-6 モデル学習チェックポイントファイルの配置
+下記よりダウンロードしたckptファイルを、本ツールの「src\steps\data」に置きます。\
+[モデル学習チェックポイントファイル](https://drive.google.com/file/d/1xxmczuzeZJuFUpXQ7mufPk6STjloLeZy/view?usp=drive_link)
