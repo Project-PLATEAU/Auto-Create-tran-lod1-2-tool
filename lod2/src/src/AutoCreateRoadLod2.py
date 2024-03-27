@@ -48,11 +48,8 @@ STEPS = [
 def main():
     """メイン関数
     """
-    #args = sys.argv
-    #args = ["AutoCreateLod2.py", os.path.join(".", "param_kawasaki_pss_test.json")]
-    #args = ["AutoCreateLod2.py", os.path.join(".", "param_kawasaki_region_0.json")]
-    args = ["AutoCreateLod2.py", os.path.join(".", "param.json")]
-    #args = ["AutoCreateLod2.py", os.path.join(".", "param_gifu.json")]
+    args = sys.argv
+    #args = ["AutoCreateLod2.py", os.path.join(".", "param.json")]
 
     if len(args) != 2:
         print('usage: python AutoCreateLod2.py param.json')
@@ -119,17 +116,6 @@ def main():
         inference_result_without_occlusion_dir = param_manager.output_dir / '6_inference_result_without_occlusion'
         vectorized_dir = param_manager.output_dir  / '7_vectorized'
         result_dir = param_manager.output_dir / '8_lod2_output'
-
-        """
-        road_info_dir = Path('C:/Users/802700/Documents/LOD2_road/data/test/road_info')
-        road_info_with_neighbors_dir = Path('C:/Users/802700/Documents/LOD2_road/data/test/road_info_with_neighbors')
-        inference_input_dir = Path('C:/Users/802700/Documents/LOD2_road/data/test/inference_input')
-        inference_result_dir = Path('C:/Users/802700/Documents/LOD2_road/data/test/inference_result')
-        inference_result_noiseless_dir = Path('C:/Users/802700/Documents/LOD2_road/data/test/inference_result_noiseless')
-        inference_result_without_occlusion_dir = Path('C:/Users/802700/Documents/LOD2_road/data/test/inference_result_without_occlusion')
-        vectorized_dir = Path('C:/Users/802700/Documents/LOD2_road/data/test//vectorized')
-        result_dir = Path(str(param_manager.output_dir) + '/lod2_output')
-        """
         
         # 処理対象のファイル名のログを出力
         log.process_start_log(file_name)

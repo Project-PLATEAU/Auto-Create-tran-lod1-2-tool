@@ -3,7 +3,6 @@ import numpy as np
 from tqdm import tqdm
 import yaml
 from PIL import Image, ImageDraw
-import rasterio as ras
 
 from ..tools.geotiff import transform_shp_to_img_coord
 from ..util.parammanager import ParamManager
@@ -68,22 +67,17 @@ class GenerateInferenceInput:
                     )
 
                 # オルソ画像
-                #ortho = Image.open(self.param_manager.ortho_dir / ortho_file_name)
-                ortho_ras = ras.open(self.param_manager.ortho_dir / ortho_file_name)
+                ortho = Image.open(self.param_manager.ortho_dir / ortho_file_name)
 
                 # if blackout:
                 # 道路外を黒塗りする
-                #ortho_np = np.array(ortho)
-                ortho_np_ras = ortho_ras.read()
-                ortho_np_ras = np.stack((ortho_np_ras[0], ortho_np_ras[1], ortho_np_ras[2]), axis=-1)
-
-                ortho_np_ras[np.array(mask) == 0] = 0
-                ortho_ras = Image.fromarray((ortho_np_ras*1).astype(np.uint8)).convert('RGB')
-                #ortho_ras = Image.fromarray(ortho_np_ras, mode=ortho_ras.mode)
+                ortho_np = np.array(ortho)
+                ortho_np[np.array(mask) == 0] = 0
+                ortho = Image.fromarray(ortho_np, mode=ortho.mode)
 
                 ortho_output_path = self.output_dir / ortho_file_name
 
-                ortho_ras.save(ortho_output_path)
+                ortho.save(ortho_output_path)
                 mask.save(
                     ortho_output_path.with_stem(ortho_output_path.stem + "_mask")
                 )

@@ -14,7 +14,7 @@ from ..util.log import Log, ModuleType, LogLevel
 from ..util.resulttype import ProcessResult, ResultType
 from ..tools.citygml import parse_city_gml_file
 from ..tools.citygml import parse_shape_file
-from ..tools.geotiff import read_geotiff, get_bounds, read_geotiff_ras, get_bounds_ras
+from ..tools.geotiff import read_geotiff, get_bounds
 
 class InputCityGmlManager:
     """CityGML建物情報クラス
@@ -133,10 +133,10 @@ class InputCityGmlManager:
                     self.citygml_info.append(rinfo)
 
             for ortho_file in tqdm(ortho_files, leave=None):
-                ortho, tfw = read_geotiff_ras(ortho_file)
+                ortho, tfw = read_geotiff(ortho_file)
 
                 assert tfw[1] == 0 and tfw[2] == 0, "回転角度が0°以外のオルソ画像は非対応です"
-                bounds = get_bounds_ras(ortho, tfw)
+                bounds = get_bounds(ortho, tfw)
 
                 # 領域内に完全に収まっているpolygonを抽出
                 eps = 1e-1  # 許容誤差
@@ -161,8 +161,7 @@ class InputCityGmlManager:
                 with (self.output_dir / f'{ortho_file.stem}.yml').open('wt') as f:
                     yaml.safe_dump({
                         'ortho': ortho_file.name,
-                        #'size': ortho.size,  # [width, height],
-                        'size': [ortho.width, ortho.height],
+                        'size': ortho.size,  # [width, height]
                         'tfw': tfw,
                         'roads': info,
                     }, f)
