@@ -108,7 +108,7 @@
 <td>NVIDIA RTX 5000以上</td>
 </tr>
 <tr>
-<td>メモリ</td>
+<td>GPU メモリ</td>
 <td>16GB以上</td>
 </tr>
 <tr>
@@ -302,8 +302,8 @@ requirements.txtは、本ツールのソースコードに同梱しています�
 <p><a href="https://developer.nvidia.com/rdp/cudnn-download" title="Opens in new window or tab">https://developer.nvidia.com/rdp/cudnn-download</a></p>
 <p>ダウンロードした「cudnn-windows-x86_64-8.9.5.29_cuda12-archive」を解凍します。<br>
 解凍したファイルを「C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8」以下の該当フォルダにコピーします。</p>
-<p>&lt;cuDNNのインストール&gt;
-<img src="../resources/devManLod2/devManLod2_002.png" alt=""></p>
+<p>&lt;cuDNNのインストール&gt;</p>
+<p><img src="../resources/devManLod2/devManLod2_002.png" alt=""></p>
 <h2 id="6-4-システム環境変数の追加">6-4 システム環境変数の追加</h2>
 <p>システム環境変数に、以下の4変数を登録します。4変数の値は、共通とします。</p>
 <table>
@@ -320,15 +320,16 @@ requirements.txtは、本ツールのソースコードに同梱しています�
 </tr>
 </tbody>
 </table>
-<p>&lt;GPU環境構築におけるシステム環境変数の登録&gt;
-<img src="../resources/devManLod2/devManLod2_003.png" alt=""></p>
+<p>&lt;GPU環境構築におけるシステム環境変数の登録&gt;</p>
+<p><img src="../resources/devManLod2/devManLod2_003.png" alt=""></p>
 <h2 id="6-5-torch-torchvisionのインストール">6-5 torch, torchvisionのインストール</h2>
 <p>仮想環境に、torch, torchvisionをインストールします。</p>
 <pre><code>&gt; pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
 </code></pre>
 <h2 id="6-6-モデル学習チェックポイントファイルの配置">6-6 モデル学習チェックポイントファイルの配置</h2>
-<p>下記よりダウンロードしたckptファイルを、本ツールの「src\steps\data」に置きます。<br>
-<a href="https://drive.google.com/file/d/1xxmczuzeZJuFUpXQ7mufPk6STjloLeZy/view?usp=drive_link">モデル学習チェックポイントファイル</a></p>
+<p>以下よりckptファイルをダウンロードします。 <br>
+本ツールの「src\steps」の下にdataフォルダを作成し、ダウンロードしたckptファイルを「src\steps\data」に置きます。</p>
+<p><a href="https://drive.google.com/file/d/1xxmczuzeZJuFUpXQ7mufPk6STjloLeZy/view?usp=drive_link">モデル学習チェックポイントファイル</a></p>
 
 </article>
           </div>
