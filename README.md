@@ -1,4 +1,4 @@
-![image](https://github.com/Project-PLATEAU/Auto-Create-tran-lod1-2-tool/assets/79615787/3f0bd8c9-319a-46b9-89d1-a12d1c4c3005)
+![image](https://github.com/Project-PLATEAU/Auto-Create-tran-lod1-2-tool/assets/79615787/5186dc68-6365-4fc7-a9cd-aa8b07c9e3c3)
 
 
 
@@ -12,9 +12,7 @@
 
 「LOD1-2道路モデル自動生成ツール」は、[「LOD2建築物モデル自動作成ツール」](https://github.com/Project-PLATEAU/Auto-Create-bldg-lod2-tool)とともに、3D都市モデルのデータ整備を自動化し、整備コストを低減することを目的に国土交通省都市局が開発している一連のツールです。  
 本ツールの詳細については[技術検証レポート](https://www.mlit.go.jp/plateau/file/libraries/doc/XXX)を参照してください。
-
-![image](https://github.com/Project-PLATEAU/Auto-Create-tran-lod1-2-tool/assets/79615787/5186dc68-6365-4fc7-a9cd-aa8b07c9e3c3)
-
+![image](https://github.com/Project-PLATEAU/Auto-Create-tran-lod1-2-tool/assets/79615787/3f0bd8c9-319a-46b9-89d1-a12d1c4c3005)
 
 ## 3. 利用手順 <!-- 下記の通り、GitHub Pagesへリンクを記載ください。URLはアクセンチュアにて設定しますので、サンプルそのままでOKです。 -->
 
